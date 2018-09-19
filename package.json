@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.sass css/style.css -w",
-    "watch:pug": "pug --watch html/index.pug --out ./ --pretty",
-    "devserver": "live-server",
+    "watch:pug": "pug --watch html/index.pug html/brand.pug -o public_html --pretty",
+    "devserver": "live-server --open=public_html",
     "start": "npm-run-all --parallel devserver watch:sass watch:pug",
     "compile:sass": "node-sass sass/main.sass css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/style.comp.css -o css/style.prefix.css",
